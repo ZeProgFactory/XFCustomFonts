@@ -22,7 +22,7 @@ namespace XFCustomFonts.Pages
       }
 
       /// <summary>
-      /// OK: WPF & UWP
+      /// OK: Android, WPF & UWP
       /// </summary>
       /// <param name="RuntimePlatform"></param>
       /// <returns></returns>
