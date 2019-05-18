@@ -136,7 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\IconFont.ttf" />
-    <BundleResource Include="Resources\Fonts\MusicPlayerFont.ttf" />
+    <BundleResource Include="Resources\Fonts\MediaPlayerFont.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Fonts\" />

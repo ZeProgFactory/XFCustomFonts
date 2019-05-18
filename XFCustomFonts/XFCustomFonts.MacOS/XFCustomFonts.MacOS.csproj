@@ -117,8 +117,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Fonts\MusicPlayerFont.ttf" />
     <BundleResource Include="Resources\Fonts\IconFont.ttf" />
+    <BundleResource Include="Resources\Fonts\MediaPlayerFont.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
