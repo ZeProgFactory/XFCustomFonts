@@ -115,6 +115,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Fonts\IconFont.ttf" />
+    <Resource Include="Fonts\MediaPlayerFont.ttf" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

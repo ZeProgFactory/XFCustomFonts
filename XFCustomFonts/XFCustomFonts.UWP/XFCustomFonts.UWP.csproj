@@ -154,12 +154,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Fonts\MusicPlayerFont.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Assets\Fonts\IconFont.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Fonts\IconFont.ttf" />
+    <Content Include="Assets\Fonts\MediaPlayerFont.ttf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
