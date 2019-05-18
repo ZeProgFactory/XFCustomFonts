@@ -17,6 +17,18 @@ namespace XFCustomFonts.Pages
          InitializeComponent();
       }
 
+      protected override void OnDisappearing()
+      {
+         base.OnDisappearing();
+
+
+         if (Navigation.NavigationStack.Count == 1 && Navigation.ModalStack.Count == 0)
+         {
+            // MacOS
+            Application.Current.Quit();
+         };
+      }
+
       private void Button_FontPage_Clicked(object sender, EventArgs e)
       {
          Navigation.PushAsync(new FontPage());
