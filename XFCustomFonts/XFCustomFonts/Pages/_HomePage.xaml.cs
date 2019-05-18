@@ -36,7 +36,7 @@ namespace XFCustomFonts.Pages
 
       private void Button_SkiaPage_Clicked(object sender, EventArgs e)
       {
-
+         Navigation.PushAsync(new SkiaPage());
       }
    }
 }
