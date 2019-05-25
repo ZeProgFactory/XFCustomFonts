@@ -1,4 +1,4 @@
-# XFCustomFonts
+﻿# XFCustomFonts
 Xamarin.Forms test project demonstrating usage of custom fonts ...
 
 ## Current state
@@ -6,7 +6,7 @@ Xamarin.Forms test project demonstrating usage of custom fonts ...
 |----------|:--------:|:---------:|:---------------:|:----:|
 | XF.UWP   |   OK     |   OK      |    OK    |  OK  | 
 | XF.Android | OK     |   OK      |    OK    |  OK  |
-| XF.iOS   |   OK     |   KO      |    OK    |  OK  |
+| XF.iOS   |   OK     |   OK      |    OK    |  OK  |
 | XF.MacOS |   OK     |   OK      |    OK    |  OK  |
 | XF.WPF   |   OK     |   OK      |    KO    |  KO*1 |
   
