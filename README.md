@@ -12,6 +12,7 @@ Xamarin.Forms test project demonstrating usage of custom fonts ...
   
    
 ### *1 XF.WPF SkiaSharp issue
+Unable to cast object of type 'SkiaSharp.Views.Forms.SKCanvasViewRenderer' to type 'Xamarin.Forms.IRegisterable'.  
 https://github.com/mono/SkiaSharp/issues/484  
 https://github.com/mono/SkiaSharp/issues/486  
   

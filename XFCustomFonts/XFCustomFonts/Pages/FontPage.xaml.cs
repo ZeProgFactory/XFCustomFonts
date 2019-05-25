@@ -52,7 +52,7 @@ namespace XFCustomFonts.Pages
 
       public static ImageSource SkiaFontIcon(string Icon, int size)
       {
-         switch( Device.RuntimePlatform)
+         switch (Device.RuntimePlatform)
          {
             case Device.macOS:
             case Device.WPF:
@@ -75,13 +75,14 @@ namespace XFCustomFonts.Pages
 
          return Render2ImageSource(size, size, (SKImageInfo info, SKCanvas canvas) =>
          {
-            canvas.Clear();
+            canvas.Clear(SKColors.Transparent);
             // canvas.Scale(2);
 
             SKPaint paint = new SKPaint
             {
                Style = SKPaintStyle.Fill,
                Color = Color.Black.ToSKColor(),
+               LcdRenderText = true,
                IsAntialias = true,
             };
 

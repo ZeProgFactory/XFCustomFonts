@@ -29,7 +29,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fonts/IconFont.ttf</string>
-	</array>
+		<string>Fonts/MediaPlayerFont.ttf</string>
+   </array>
 	<key>ATSApplicationFontsPath</key>
 	<string>Fonts</string>
 </dict>
