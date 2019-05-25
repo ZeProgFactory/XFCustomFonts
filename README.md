@@ -2,17 +2,17 @@
 Xamarin.Forms test project demonstrating usage of custom fonts ...
 
 ## Current state
-| platform | Label IF | Label MPF | SkiaSharp |  
-|----------|:--------:|:---------:|:----:|
-| XF.UWP   |   OK     |   OK      |  OK  | 
-| XF.Android | OK     |   OK      |  OK  |
-| XF.iOS   |   OK     |    ?      |  OK  |
-| XF.MacOS |   OK     |   OK      |  OK  |
-| XF.WPF   |   OK     |   OK      |  KO* |
+| platform | Label IF | Label MPF | Button<br />FontIcon | SkiaSharp |  
+|----------|:--------:|:---------:|:---------------:|:----:|
+| XF.UWP   |   OK     |   OK      |    OK    |  OK  | 
+| XF.Android | OK     |   OK      |    OK    |  OK  |
+| XF.iOS   |   OK     |   KO      |    OK    |  OK  |
+| XF.MacOS |   OK     |   OK      |    OK    |  OK  |
+| XF.WPF   |   OK     |   OK      |    KO    |  KO*1 |
   
    
-### *XF.WPF SkiaSharp issue
-https://github.com/mono/SkiaSharp/issues/484
+### *1 XF.WPF SkiaSharp issue
+https://github.com/mono/SkiaSharp/issues/484  
 https://github.com/mono/SkiaSharp/issues/486  
   
   
