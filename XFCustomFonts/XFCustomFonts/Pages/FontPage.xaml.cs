@@ -1,12 +1,8 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -23,7 +19,7 @@ namespace XFCustomFonts.Pages
          labelIF.FontFamily = GetFontFamily(Device.RuntimePlatform);
          labelIF.Text = ZPFFonts.IF.GetContent(ZPFFonts.IF.ZPF);
 
-         labelMPF.FontFamily = GetFontFamily(Device.RuntimePlatform,"MediaPlayerFont");
+         labelMPF.FontFamily = GetFontFamily(Device.RuntimePlatform, "MediaPlayerFont");
          labelMPF.Text = ZPFFonts.MPF.GetContent(ZPFFonts.MPF.Music);
 
          //Test 1
@@ -54,11 +50,28 @@ namespace XFCustomFonts.Pages
 
       // - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - - 
 
-      public static ImageSource SkiaFontIcon(string Icon, int size )
+      public static ImageSource SkiaFontIcon(string Icon, int size)
       {
+         // Get Metrics
+         var mainDisplayInfo = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo;
+
+         switch( Device.RuntimePlatform)
+         {
+            case Device.UWP:
+            case Device.iOS:
+               // nope
+               break;
+
+            case Device.Android:
+            default:
+               size = (int)(size * mainDisplayInfo.Density);
+               break;
+         };
+
          return Render2ImageSource(size, size, (SKImageInfo info, SKCanvas canvas) =>
          {
             canvas.Clear();
+            // canvas.Scale(2);
 
             SKPaint paint = new SKPaint
             {
@@ -76,14 +89,11 @@ namespace XFCustomFonts.Pages
 
       public static ImageSource Render2ImageSource(int width, int height, Action<SKImageInfo, SKCanvas> action)
       {
-         //_canvasView is the control the user actually sees. Building this from stored commands. 
-         //Then triggering the save via a button click. Drawing paths on new canvas.
          SKImageInfo info = new SKImageInfo(width, height);
          SKBitmap bitmap = new SKBitmap(info.Width, info.Height);
          SKCanvas canvas = new SKCanvas(bitmap);
 
          //Draw on canvas from stored commands DrawPath, etc.
-
          action(info, canvas);
 
          return (SKBitmapImageSource)bitmap;
@@ -98,7 +108,6 @@ namespace XFCustomFonts.Pages
       // - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - - 
 
       /// <summary>
-      /// OK: Android, WPF & UWP
       /// </summary>
       /// <param name="RuntimePlatform"></param>
       /// <returns></returns>
@@ -124,7 +133,7 @@ namespace XFCustomFonts.Pages
             default:
             case "UWP":
                // add the font file to the /Assets/Fonts/ folder in the application project and set the Build Action:Content.
-               return $"Assets/Fonts/{FontName}.ttf#{FontName}"; 
+               return $"Assets/Fonts/{FontName}.ttf#{FontName}";
          };
       }
    }
