@@ -10,6 +10,10 @@
             <Label FontSize="32" Text="MediaPlayerFont" Margin="10" VerticalTextAlignment="Center" WidthRequest="250" HorizontalTextAlignment="End"/>
             <Label x:Name="labelMPF" FontSize="64" Text="Welcome to Xamarin.Forms!" />
          </StackLayout>
+         <StackLayout Orientation="Horizontal" >
+            <Label FontSize="32" Text="SkiaFontIcon (ImageSource)" Margin="10" VerticalTextAlignment="Center" WidthRequest="250" HorizontalTextAlignment="End"/>
+            <Button x:Name="btnMPF" FontSize="64" BorderColor="Black" BorderWidth="2" />
+         </StackLayout>
       </StackLayout>
    </ContentPage.Content>
 </ContentPage>

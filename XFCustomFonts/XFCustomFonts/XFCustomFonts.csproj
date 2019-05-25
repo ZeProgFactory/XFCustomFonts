@@ -18,11 +18,13 @@
   <ItemGroup>
     <None Remove="Fonts\IconFont.ttf" />
     <None Remove="Fonts\MediaPlayerFont.ttf" />
+    <None Remove="Images\Music.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Fonts\IconFont.ttf" />
     <EmbeddedResource Include="Fonts\MediaPlayerFont.ttf" />
+    <EmbeddedResource Include="Images\Music.png" />
   </ItemGroup>
 
   <ItemGroup>

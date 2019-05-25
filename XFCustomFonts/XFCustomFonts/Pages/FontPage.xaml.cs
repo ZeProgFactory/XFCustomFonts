@@ -1,6 +1,10 @@
-﻿using System;
+﻿using SkiaSharp;
+using SkiaSharp.Views.Forms;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +25,77 @@ namespace XFCustomFonts.Pages
 
          labelMPF.FontFamily = GetFontFamily(Device.RuntimePlatform,"MediaPlayerFont");
          labelMPF.Text = ZPFFonts.MPF.GetContent(ZPFFonts.MPF.Music);
+
+         //Test 1
+         //btnMPF.ImageSource = ImageSource.FromResource("XFCustomFonts.Images.Music.png", typeof(_HomePage));
+
+         //Test 2
+         //int width = 64;
+         //int height = 64;
+         //btnMPF.ImageSource = Render2ImageSource(width, height, (SKImageInfo info, SKCanvas canvas) =>
+         //{
+         //   canvas.Clear();
+
+         //   SKPaint paint = new SKPaint
+         //   {
+         //      Style = SKPaintStyle.Fill,
+         //      Color = Color.Black.ToSKColor(),
+         //      IsAntialias = true,
+         //   };
+
+         //   paint.Typeface = SKTypeface.FromStream(GetStreamFromResources(typeof(SkiaPage), "XFCustomFonts.Fonts.MediaPlayerFont.ttf"));
+         //   paint.TextSize = info.Width;
+
+         //   canvas.DrawText(ZPFFonts.IF.GetContent(ZPFFonts.MPF.Music), 0, info.Height, paint);
+         //});
+
+         btnMPF.ImageSource = SkiaFontIcon(ZPFFonts.MPF.Music, 64);
       }
+
+      // - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - - 
+
+      public static ImageSource SkiaFontIcon(string Icon, int size )
+      {
+         return Render2ImageSource(size, size, (SKImageInfo info, SKCanvas canvas) =>
+         {
+            canvas.Clear();
+
+            SKPaint paint = new SKPaint
+            {
+               Style = SKPaintStyle.Fill,
+               Color = Color.Black.ToSKColor(),
+               IsAntialias = true,
+            };
+
+            paint.Typeface = SKTypeface.FromStream(GetStreamFromResources(typeof(SkiaPage), "XFCustomFonts.Fonts.MediaPlayerFont.ttf"));
+            paint.TextSize = info.Width;
+
+            canvas.DrawText(ZPFFonts.IF.GetContent(Icon), 0, info.Height, paint);
+         });
+      }
+
+      public static ImageSource Render2ImageSource(int width, int height, Action<SKImageInfo, SKCanvas> action)
+      {
+         //_canvasView is the control the user actually sees. Building this from stored commands. 
+         //Then triggering the save via a button click. Drawing paths on new canvas.
+         SKImageInfo info = new SKImageInfo(width, height);
+         SKBitmap bitmap = new SKBitmap(info.Width, info.Height);
+         SKCanvas canvas = new SKCanvas(bitmap);
+
+         //Draw on canvas from stored commands DrawPath, etc.
+
+         action(info, canvas);
+
+         return (SKBitmapImageSource)bitmap;
+      }
+
+      public static Stream GetStreamFromResources(Type type, string resourceName)
+      {
+         var assembly = type.GetTypeInfo().Assembly;
+         return assembly.GetManifestResourceStream(resourceName);
+      }
+
+      // - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - - 
 
       /// <summary>
       /// OK: Android, WPF & UWP
@@ -53,7 +127,5 @@ namespace XFCustomFonts.Pages
                return $"Assets/Fonts/{FontName}.ttf#{FontName}"; 
          };
       }
-
-
    }
 }
