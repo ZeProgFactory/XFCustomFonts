@@ -52,11 +52,13 @@ namespace XFCustomFonts.Pages
 
       public static ImageSource SkiaFontIcon(string Icon, int size)
       {
-         // Get Metrics
-         var mainDisplayInfo = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo;
-
          switch( Device.RuntimePlatform)
          {
+            case Device.macOS:
+            case Device.WPF:
+               //ToDo: Xamarin.Essentials.DeviceDisplay.MainDisplayInfo not implemented
+               break;
+
             case Device.UWP:
             case Device.iOS:
                // nope
@@ -64,6 +66,9 @@ namespace XFCustomFonts.Pages
 
             case Device.Android:
             default:
+               // Get Metrics
+               var mainDisplayInfo = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo;
+
                size = (int)(size * mainDisplayInfo.Density);
                break;
          };
