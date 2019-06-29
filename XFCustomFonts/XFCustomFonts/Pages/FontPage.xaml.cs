@@ -45,7 +45,8 @@ namespace XFCustomFonts.Pages
          //   canvas.DrawText(ZPFFonts.IF.GetContent(ZPFFonts.MPF.Music), 0, info.Height, paint);
          //});
 
-         btnMPF.ImageSource = SkiaFontIcon(ZPFFonts.MPF.Music, 64);
+         //XF >= 4.x
+         //btnMPF.ImageSource = SkiaFontIcon(ZPFFonts.MPF.Music, 64);
       }
 
       // - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - - 
