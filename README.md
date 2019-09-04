@@ -1,6 +1,8 @@
 ﻿# XFCustomFonts
 Xamarin.Forms test project demonstrating usage of custom fonts ...
 
+Update to Xamarin.Forms 4.2.0.709249 (not tested yet)
+
 ## Current state (Xamarin.Forms 4.0.0.540366)
 | platform | Label IF | Label MPF | Button<br />FontIcon | SkiaSharp |  
 |----------|:--------:|:---------:|:---------------:|:----:|
