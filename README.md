@@ -33,6 +33,48 @@ Unable to cast object of type 'SkiaSharp.Views.Forms.SKCanvasViewRenderer' to ty
 https://github.com/mono/SkiaSharp/issues/484  
 https://github.com/mono/SkiaSharp/issues/486  
   
-  
-## How to build
+
+# HowTO
+
+## Android
+
+    <AndroidAsset Include="Assets\MediaPlayerFont.ttf" />
+
+
+## iOS
+
+    <BundleResource Include="Resources\Fonts\MediaPlayerFont.ttf" />
+
+### info.plist
+
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/IconFont.ttf</string>
+		<string>Fonts/MediaPlayerFont.ttf</string>
+	</array>
+	<key>ATSApplicationFontsPath</key>
+	<string>Fonts</string>
+
+
+## MacOS
+
+    <BundleResource Include="Resources\Fonts\MediaPlayerFont.ttf" />
+
+### info.plist
+
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/IconFont.ttf</string>
+		<string>Fonts/MediaPlayerFont.ttf</string>
+	</array>
+	<key>ATSApplicationFontsPath</key>
+	<string>Fonts</string>
+
+
+## UWP
+
+    <Content Include="Assets\Fonts\MediaPlayerFont.ttf" />
+    
+    
+# How to build
 Builds on Windows and MacOS with Visual Studio 2019 with the latest Xamarin, .NET Core and UWP installed.
