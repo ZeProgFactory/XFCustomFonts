@@ -82,9 +82,45 @@ On a UWP project you should add your fontfiles to the Assets folder and mark the
     <Content Include="Assets\Fonts\MediaPlayerFont.ttf" />
        
 
-# How to use custom fonts   
+# How to use custom fonts with lables, buttons, ...  
+In order to use our custom (you should adapt the code to your) fonts and their excat location. We created two little helpers:
+The first one determines the full FontFamily name including the path depending on the runtime platform:
+
+   GetFontFamily(Device.RuntimePlatform);
+
+      public static string GetFontFamily(string RuntimePlatform, string FontName = "IconFont")
+      {
+         switch (RuntimePlatform)
+         {
+            case "macOS":
+            case "iOS":
+               // Add the font file with Build Action: BundleResource, and
+               // Update the Info.plist file(Fonts provided by application, or UIAppFonts, key)
+               return $"{FontName}";
+
+            case "Android":
+               // add the font file to the Assets folder in the application project and set Build Action: AndroidAsset. 
+               return $"{FontName}.ttf#{FontName}";
+
+            case "WPF":
+               // https://github.com/xamarin/Xamarin.Forms/pull/3225
+               // add the font file to the /Fonts/ folder in the application project and set the Build Action:Resource - Do not copy.
+               return $"/XFCustomFonts.WPF;component/Fonts/#{FontName}";
+
+            default:
+            case "UWP":
+               // add the font file to the /Assets/Fonts/ folder in the application project and set the Build Action:Content.
+               return $"Assets/Fonts/{FontName}.ttf#{FontName}";
+         };
+      }
+
 ... FontPage.cs ... 
 
-   
+         labelIF.FontFamily = GetFontFamily(Device.RuntimePlatform);
+         labelIF.Text = ZPFFonts.IF.GetContent(ZPFFonts.IF.ZPF);
+	 
+# How to use custom fonts with SkiaSharp  
+... cf SkiaPage.cs ... 
+
 # How to build
 Builds on Windows and MacOS with Visual Studio 2019 with the latest Xamarin, .NET Core and UWP installed.
