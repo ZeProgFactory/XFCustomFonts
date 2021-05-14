@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfAppNetCore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppNetCore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock FontFamily="./#Desyrel" FontSize="48">
+Hello
+            </TextBlock>
+            <TextBlock FontFamily="./#IconFont" FontSize="64" Text="&#xE9BB;" HorizontalAlignment="Center"/>
+            <TextBlock FontFamily="./#MediaPlayerFont" FontSize="64" Text="&#xe909;" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
