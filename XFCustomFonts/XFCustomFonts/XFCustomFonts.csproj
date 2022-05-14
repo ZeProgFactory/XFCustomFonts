@@ -1,47 +1,51 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <ProduceAssemblyReference>true</ProduceAssemblyReference>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ProduceAssemblyReference>true</ProduceAssemblyReference>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>pdbonly</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>TRACE;XF</DefineConstants>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>portable</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<DefineConstants>TRACE;XF</DefineConstants>
+		<Optimize>False</Optimize>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;XF</DefineConstants>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DefineConstants>TRACE;XF</DefineConstants>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Fonts\IconFont.ttf" />
-    <None Remove="Fonts\MediaPlayerFont.ttf" />
-    <None Remove="Images\Music.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Fonts\desyrel.ttf" />
+		<None Remove="Fonts\IconFont.ttf" />
+		<None Remove="Fonts\MediaPlayerFont.ttf" />
+		<None Remove="Images\Music.png" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="Fonts\IconFont.ttf" />
-    <EmbeddedResource Include="Fonts\MediaPlayerFont.ttf" />
-    <EmbeddedResource Include="Images\Music.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Fonts\desyrel.ttf" />
+		<EmbeddedResource Include="Fonts\IconFont.ttf" />
+		<EmbeddedResource Include="Fonts\MediaPlayerFont.ttf" />
+		<EmbeddedResource Include="Images\Music.png" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.910310" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Pages\FontPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Pages\SkiaPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Pages\_HomePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Pages\FontPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\SkiaPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\_HomePage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+	</ItemGroup>
 </Project>

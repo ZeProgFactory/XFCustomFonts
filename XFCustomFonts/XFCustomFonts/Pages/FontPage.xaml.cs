@@ -22,32 +22,32 @@ namespace XFCustomFonts.Pages
          labelMPF.FontFamily = GetFontFamily(Device.RuntimePlatform, "MediaPlayerFont");
          labelMPF.Text = ZPFFonts.MPF.GetContent(ZPFFonts.MPF.Music);
 
-         //Test 1
-         //btnMPF.ImageSource = ImageSource.FromResource("XFCustomFonts.Images.Music.png", typeof(_HomePage));
+            //Test 1
+            //btnMPF.ImageSource = ImageSource.FromResource("XFCustomFonts.Images.Music.png", typeof(_HomePage));
 
-         //Test 2
-         //int width = 64;
-         //int height = 64;
-         //btnMPF.ImageSource = Render2ImageSource(width, height, (SKImageInfo info, SKCanvas canvas) =>
-         //{
-         //   canvas.Clear();
+            //Test 2 - OK
+            //int width = 64;
+            //int height = 64;
+            //btnMPF.ImageSource = Render2ImageSource(width, height, (SKImageInfo info, SKCanvas canvas) =>
+            //{
+            //    canvas.Clear();
 
-         //   SKPaint paint = new SKPaint
-         //   {
-         //      Style = SKPaintStyle.Fill,
-         //      Color = Color.Black.ToSKColor(),
-         //      IsAntialias = true,
-         //   };
+            //    SKPaint paint = new SKPaint
+            //    {
+            //        Style = SKPaintStyle.Fill,
+            //        Color = Color.Black.ToSKColor(),
+            //        IsAntialias = true,
+            //    };
 
-         //   paint.Typeface = SKTypeface.FromStream(GetStreamFromResources(typeof(SkiaPage), "XFCustomFonts.Fonts.MediaPlayerFont.ttf"));
-         //   paint.TextSize = info.Width;
+            //    paint.Typeface = SKTypeface.FromStream(GetStreamFromResources(typeof(SkiaPage), "XFCustomFonts.Fonts.MediaPlayerFont.ttf"));
+            //    paint.TextSize = info.Width;
 
-         //   canvas.DrawText(ZPFFonts.IF.GetContent(ZPFFonts.MPF.Music), 0, info.Height, paint);
-         //});
+            //    canvas.DrawText(ZPFFonts.IF.GetContent(ZPFFonts.MPF.Music), 0, info.Height, paint);
+            //});
 
-         //XF >= 4.x
-         //btnMPF.ImageSource = SkiaFontIcon(ZPFFonts.MPF.Music, 64);
-      }
+            //XF >= 4.x
+            btnMPF.ImageSource = SkiaFontIcon(ZPFFonts.MPF.Music, 64);
+        }
 
       // - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - - 
 
